@@ -10,7 +10,7 @@ export class AwsPipelineTestStack extends cdk.Stack {
     new CodePipeline(this, 'PipeLine', {
       pipelineName: 'TestPipeLine',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub('aaronsr/aws-pipeline-test', 'main'),
+        input: CodePipelineSource.gitHub('aaronsr/aws-pipeline-test', 'master'),
         commands: ['npm ci',
                    'npm run build',
                    'cdk synth'
