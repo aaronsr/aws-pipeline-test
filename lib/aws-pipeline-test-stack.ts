@@ -13,10 +13,9 @@ export class AwsPipelineTestStack extends cdk.Stack {
         input: CodePipelineSource.gitHub('aaronsr/aws-pipeline-test', 'master'),
         commands: ['npm ci',
                    'npm run build',
-                   'cdk synth'
+                   'npx cdk synth'
                   ]
       })
     })
-
   }
 }
